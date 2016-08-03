@@ -25,15 +25,15 @@ public class Controller : MonoBehaviour {
 		myAnimator = GetComponent<Animator> ();
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-		grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
+    // Update is called once per frame
+    void Update() {
 
-		myRigidbody.velocity = new Vector2 (moveSpeed, myRigidbody.velocity.y);
+        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
 
-		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0)) {
+        myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown (0)) { 
 			if (grounded) {
 				myRigidbody.velocity = new Vector2 (myRigidbody.velocity.x, jumpForce); 
 			}
